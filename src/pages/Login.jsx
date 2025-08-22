@@ -20,14 +20,14 @@ const Login = () => {
         e.preventDefault();
         try {
             if(state==='Sign Up'){
-                const res = await axios.post('http://localhost:5000/api/auth/register',{
+                const res = await axios.post('https://authentication-backend-crmb.onrender.com/api/auth/register',{
                     name,email,password
                 },{withCredentials:true});
                 console.log('Registration Response:',res.data);
                 setUser({name: res.data.user.name, email: res.data.user.email});
             }
             else{
-                const res = await axios.post('http://localhost:5000/api/auth/login',{
+                const res = await axios.post('https://authentication-backend-crmb.onrender.com/api/auth/login',{
                     email,password
                 },{withCredentials:true});
                 console.log('Login Response:',res.data);
